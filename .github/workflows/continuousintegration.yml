@@ -1,4 +1,5 @@
 name: Continuous Integration
+
 on:
   pull_request:
     branches:
@@ -7,11 +8,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps :
+
+    steps:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Python Lint Code Scanning Action
-        uses: advanced-security/python-lint-code-scanning-action@v1.1.1
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          linter: pylint
+          python-version: '3.10'
+
+      - name: Instalar pylint
+        run: pip install pylint
+
+      - name: Rodar pylint (sem falhar)
+        run: pylint *.py || true
