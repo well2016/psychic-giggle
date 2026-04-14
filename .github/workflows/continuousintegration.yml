@@ -1,5 +1,9 @@
 name: Continuous Integration
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b552960f43f79b4d762793a20cac789193573c71
 on:
   pull_request:
     branches:
@@ -22,4 +26,16 @@ jobs:
         run: pip install pylint
 
       - name: Rodar pylint (sem falhar)
+<<<<<<< HEAD
         run: pylint *.py || true
+=======
+        run: pylint *.py || true
+    steps :
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Python Lint Code Scanning Action
+        uses: advanced-security/python-lint-code-scanning-action@v1.1.1
+        with:
+        linter: pylint
+>>>>>>> b552960f43f79b4d762793a20cac789193573c71
