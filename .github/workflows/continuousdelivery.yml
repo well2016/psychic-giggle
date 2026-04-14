@@ -1,4 +1,3 @@
-# .github/workflows/continuousdelivery.yml
 name: Continuous Delivery
 
 on:
