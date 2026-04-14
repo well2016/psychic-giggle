@@ -1,17 +1,13 @@
 name: Continuous Integration
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
+
 on:
   pull_request:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
-<<<<<<< Updated upstream
 
     steps:
       - name: Check out repository code
@@ -28,7 +24,6 @@ jobs:
 
       - name: Rodar pylint (sem falhar)
         run: pylint *.py || true
-=======
     steps :
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -37,4 +32,3 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1.1.1
         with:
         linter: pylint
->>>>>>> Stashed changes
