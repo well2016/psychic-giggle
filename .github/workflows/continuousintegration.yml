@@ -1,10 +1,14 @@
 name: Continuous Integration
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> b552960f43f79b4d762793a20cac789193573c71
 on:
   pull_request:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,13 +20,15 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          linter: pylint
           python-version: '3.10'
 
       - name: Instalar pylint
         run: pip install pylint
 
       - name: Rodar pylint (sem falhar)
+<<<<<<< HEAD
+        run: pylint *.py || true
+=======
         run: pylint *.py || true
     steps :
       - name: Check out repository code
@@ -32,3 +38,4 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1.1.1
         with:
         linter: pylint
+>>>>>>> b552960f43f79b4d762793a20cac789193573c71
